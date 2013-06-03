@@ -1,0 +1,26 @@
+{
+      "type": "chef-solo",
+      "ami": "ami-c30360aa",
+      "run_list": [
+          "recipe[mysql::default]"
+      ],
+      "data_bags": {
+          "aws_keys": {
+              "s3_key": {
+                  "access_key": "123abc",
+                  "secret_key": "abcdef"
+              },
+              "config": {
+                  "var1": "foo",
+                  "var2": "bar"
+              }
+          }
+      },
+      "node_attributes": {
+          "ec2_id": "1234",
+          "network": {
+              "ip_address": "10.0.0.1",
+              "other_id": "10.0.0.2"
+          }
+      }
+  }
